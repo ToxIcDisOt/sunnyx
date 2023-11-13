@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunny | AI NLP</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Prevents inner scrollbar */
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+    <script>
+      function removeHeaderFooterFromIframe() {
+        var iframe = document.querySelector("iframe");
+        if (iframe) {
+          iframe.onload = function () {
+            var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+            var header = innerDoc.querySelector("header");
+            var footer = innerDoc.querySelector("footer");
+
+            if (header) {
+              header.remove();
+            }
+
+            if (footer) {
+              footer.remove();
+            }
+          };
+        }
+      }
+
+      // Automatically remove header and footer when the document is ready
+      document.addEventListener("DOMContentLoaded", removeHeaderFooterFromIframe);
+    </script>
+  </head>
+  <body>
+    <iframe src="https://6db562139da2e38e26.gradio.live/" frameborder="0"></iframe>
+  </body>
+</html>
